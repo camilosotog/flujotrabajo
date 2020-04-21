@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<html>
+  <div class="ventana">
+
+    <!--MODULOS-->
+
+    <div id="modulos">
+      <button id="btnMod1" mdbBtn color="white" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
+        <mdb-icon fas icon="list-ul"></mdb-icon>
+                 Modulos
+      </button>
+      <div class="" mdbCollapse #test="bs-collapse">
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>E. Organizacional</button>
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>Tipos de solicitudes</button>
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>Flujo de solicitudes</button>
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>Gestion de solicitudes</button>
+      </div>
+    </div>
+
+    <!-- BOTON ADD-->
+
+
+
+    <!-- ARBOL-->
+
+    <div id="datos" class="table-responsive">
+
+      <br/>
+      <button mdbBtn type="button" color="default"
+      rounded="true" mdbWavesEffect (click)="openDialog()">
+      <mdb-icon fas icon="plus"></mdb-icon>
+      </button>
+
+      <br/><br/>
+
+      <div id="jstree">
+
+        <ul *ngFor="let dependencia of dependencias">
+          <li data-jstree='{"icon":"fa fa-folder"}' >
+            {{dependencia.nombre}}
+            <ul>
+              <li data-jstree='{"icon":"fa fa-folder"}' >Id: {{dependencia.id}}
+              <li data-jstree='{"icon":"fa fa-folder"}' >Codigo: {{dependencia.codigo}}</li>
+              <li data-jstree='{"icon":"fa fa-folder"}' >
+                Jefe de dependencia
+                <ul *ngFor="let empleado of empleados" >
+                  <li data-jstree='{"icon":"fa fa-folder"}'  *ngIf="dependencia.fk_empleado == empleado.id" >
+                    {{empleado.nombre}}
+                    <ul>
+                      <li data-jstree='{"icon":"fa fa-folder"}' >
+                        Grupo de trabajo
+                        <ul *ngFor="let cargo6 of cargos" >
+                          <li data-jstree='{"icon":"fa fa-folder"}'  *ngIf="cargo6.fk_dependencia == dependencia.id" >
+                            {{cargo6.nombre}}
+                            <ul *ngFor="let empleado3 of empleados" >
+                              <li data-jstree='{"icon":"fa fa-folder"}'  *ngIf="empleado3.fk_cargo == cargo6.id" >
+                                {{empleado3.nombre}}
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li data-jstree='{"icon":"fa fa-folder"}' >
+                Dependencia padre
+                <ul *ngFor="let dependencia2 of dependencias">
+                  <li data-jstree='{"icon":"fa fa-folder"}'  *ngIf="dependencia.fk_dependencia == dependencia2.id" >
+                    {{dependencia2.nombre}}
+                  </li>
+                </ul>
+              </li>
+              <li data-jstree='{"icon":"fa fa-folder"}' >
+                Cargos de la dependencia
+                <ul *ngFor="let cargo of cargos" >
+                  <li data-jstree='{"icon":"fa fa-folder"}'  *ngIf="cargo.fk_dependencia == dependencia.id && cargo.descripcion == 'Jefe de area'" >
+                    Jefe de área
+                    <ul>
+                      <li data-jstree='{"icon":"fa fa-folder"}' >
+                        {{cargo.nombre}}
+                      </li>
+                    </ul>
+                  </li>
+                  <li data-jstree='{"icon":"fa fa-folder"}' *ngIf="cargo.fk_dependencia == dependencia.id && cargo.descripcion == 'Administrativo'" >
+                    Administrativos
+                    <ul>
+                      <li data-jstree='{"icon":"fa fa-folder"}' >
+                        {{cargo.nombre}}
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--BOTON EMPLEADO-->
+</html>

@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "camilo",
+    "database": "flujotrabajo",
+    "host": "localhost",
+    "port": 5433,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "camilo",
+    "database": "flujotrabajo",
+    "host": "localhost",
+    "port": 5433,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "camilo",
+    "database": "flujotrabajo",
+    "host": "localhost",
+    "port": 5433,
+    "dialect": "postgres"
+  },
+  "token_secret":"123Abc_123aBC"
+}

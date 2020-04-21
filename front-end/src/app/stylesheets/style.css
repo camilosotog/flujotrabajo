@@ -1,0 +1,266 @@
+        body {
+            padding: 50px;
+            font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        }
+        
+        a {
+            color: #00B9FF;
+        }
+        /*
+  Nota: si no usas el navbar, el siguiente código
+  no es necesario
+*/
+        
+        body {
+            padding-top: 70px;
+        }
+        
+        h1 {
+            font-size: 120%;
+        }
+        
+        #myUL {
+            list-style-type: none;
+        }
+        
+        #myUL {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .caret {
+            cursor: pointer;
+            -webkit-user-select: none;
+            /* Safari 3.1+ */
+            -moz-user-select: none;
+            /* Firefox 2+ */
+            -ms-user-select: none;
+            /* IE 10+ */
+            user-select: none;
+        }
+        
+        .caret::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        
+        .caret-down::before {
+            -ms-transform: rotate(90deg);
+            /* IE 9 */
+            -webkit-transform: rotate(90deg);
+            /* Safari */
+            transform: rotate(90deg);
+        }
+        
+        .nested {
+            display: none;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        body {
+            padding-bottom: 70px;
+        }
+        
+        li {
+            font-size: 120%
+        }
+        
+        .tree,
+        .tree ul {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+        
+        .tree ul {
+            margin-left: 1em;
+            position: relative
+        }
+        
+        .tree ul ul {
+            margin-left: .5em
+        }
+        
+        .tree ul:before {
+            content: "";
+            display: block;
+            width: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            border-left: 1px solid
+        }
+        
+        .tree li {
+            margin: 0;
+            padding: 0 1em;
+            line-height: 2em;
+            color: #369;
+            font-weight: 100%;
+            position: relative
+        }
+        
+        .tree ul li:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 0;
+            border-top: 1px solid;
+            margin-top: -1px;
+            position: absolute;
+            top: 1em;
+            left: 0
+        }
+        
+        .tree ul li:last-child:before {
+            background: #fff;
+            height: auto;
+            top: 1em;
+            bottom: 0
+        }
+        
+        .indicator {
+            margin-right: 5px;
+        }
+        
+        .tree li a {
+            text-decoration: none;
+            color: #369;
+        }
+        
+        .tree li button,
+        .tree li button:active,
+        .tree li button:focus {
+            text-decoration: none;
+            color: #369;
+            border: none;
+            background: transparent;
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            outline: 0;
+        }
+        
+        .tree,
+        .tree ul {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+        
+        .tree ul {
+            margin-left: 1em;
+            position: relative
+        }
+        
+        .tree ul ul {
+            margin-left: .5em
+        }
+        
+        .tree ul:before {
+            content: "";
+            display: block;
+            width: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            border-left: 1px solid
+        }
+        
+        .tree li {
+            margin: 0;
+            padding: 0 1em;
+            line-height: 2em;
+            color: #369;
+            font-weight: 700;
+            position: relative
+        }
+        
+        .tree ul li:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 0;
+            border-top: 1px solid;
+            margin-top: -1px;
+            position: absolute;
+            top: 1em;
+            left: 0
+        }
+        
+        .tree ul li:last-child:before {
+            background: #fff;
+            height: auto;
+            top: 1em;
+            bottom: 0
+        }
+        
+        .indicator {
+            margin-right: 5px;
+        }
+        
+        .tree li a {
+            text-decoration: none;
+            color: #369;
+        }
+        
+        .tree li button,
+        .tree li button:active,
+        .tree li button:focus {
+            text-decoration: none;
+            color: #369;
+            border: none;
+            background: transparent;
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            outline: 0;
+        }
+        
+        li {
+            font-size: 100%;
+        }
+        
+        ul {
+            font-size: 120%;
+        }
+        
+        .cajas {
+            float: left;
+            width: 16%;
+            text-align: left;
+            font-size: 18;
+        }
+        
+        .cajas2 {
+            float: right;
+            width: 83%;
+            text-align: left;
+        }
+        
+        .card-header {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn btn-link {
+            font-size: 18;
+        }
+        
+        .btn-group-vertical {
+            width: 100%;
+        }
+        
+        .form-inline my-2 my-lg-0 {
+            float: right;
+            width: 10%;
+        }
+        
+        .form-control mr-sm-2 {
+            float: right;
+        }

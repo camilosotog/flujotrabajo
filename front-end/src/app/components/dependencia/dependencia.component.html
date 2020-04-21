@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<html>
+  <div>
+
+    <!--MODULOS-->
+
+    <div id="modulos">
+      <button id="btnMod1" mdbBtn color="white" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
+        <mdb-icon fas icon="list-ul"></mdb-icon>
+                 Modulos
+      </button>
+      <div class="" mdbCollapse #test="bs-collapse">
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>E. Organizacional</button>
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>Tipos de solicitudes</button>
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>Flujo de solicitudes</button>
+        <button id="btnMod" type="button" mdbBtn color="white" mdbWavesEffect>Gestion de solicitudes</button>
+      </div>
+    </div>
+
+    <!-- BOTON ADD-->
+
+
+
+    <!-- TABLA-->
+
+    <div id="datos">
+
+      <br/>
+      <button mdbBtn type="button" color="default"
+      rounded="true" mdbWavesEffect (click)="openDialog()">
+      <mdb-icon fas icon="plus"></mdb-icon>
+      </button>
+
+      <br/><br/>
+      <div class="table-wrapper-scroll-y my-custom-scrollbar" id="tbody">
+
+        <table mdbTable class="z-depth-1" id="tbody">
+          <thead id="tbody">
+          <tr>
+            <th [mdbTableSort]="elements" sortBy="id" id="tbody">ID</th>
+            <th [mdbTableSort]="elements" sortBy="first.nick" id="tbody">Nombre</th>
+            <th [mdbTableSort]="elements" sortBy="last" id="tbody">Codigo</th>
+            <th [mdbTableSort]="elements" sortBy="handle" id="tbody">Dependencia padre</th>
+            <th [mdbTableSort]="elements" sortBy="handle" id="tbody">Jefe de área</th>
+            <th [mdbTableSort]="elements" sortBy="handle" id="tbody">Editar</th>
+            <th [mdbTableSort]="elements" sortBy="handle" id="tbody">Eliminar</th>
+          </tr>
+          </thead>
+          <tbody id="tbody">
+          <tr *ngFor="let dependencia of dependencias; let i = index">
+            <th scope="row" id="tbody">{{dependencia.id}}</th>
+            <td id="tbody">{{dependencia.nombre}}</td>
+            <td id="tbody">{{dependencia.codigo}}</td>
+
+            <td>
+              <div style="width: 0%; height: 0%;" *ngFor="let dependencia2 of dependencias" >
+                <p id="tbody" *ngIf="dependencia.fk_dependencia == dependencia2.id" >
+                  {{dependencia2.nombre}}
+                </p>
+              </div>
+            </td>
+            <td>
+              <div style="width: 0%; height: 0%;" *ngFor="let empleado of empleados" >
+                <p id="tbody" *ngIf="dependencia.fk_empleado == empleado.id" >
+                  {{empleado.nombre}}
+                </p>
+              </div>
+            </td>
+            <td>
+              <button mdbBtn type="button" color="warning" rounded="true"
+              outline="true" mdbWavesEffect (click)="openDialogEdit(dependencia)">
+                <mdb-icon fas icon="edit"></mdb-icon>
+              </button>
+            </td>
+            <td>
+              <button mdbBtn type="button" color="danger" rounded="true"
+              outline="true" mdbWavesEffect (click)="eliminar(dependencia.id)">
+                <mdb-icon fas icon="trash-alt"></mdb-icon>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--BOTON EMPLEADO-->
+
+  <!--ejemplo-->
+
+</html>

@@ -1,0 +1,29 @@
+<div class="content">
+  <h2>Agregar empleado</h2>
+  <br/><br/>
+  <form #nuevoEmpleadoForm="ngForm" (ngSubmit)="agregar()">
+
+    <mat-form-field  class="col-xs-12" style="width: 100%;">
+      <input autocomplete="off" matInput type="text" #nombre="ngModel" name="nombre" [(ngModel)]="empleados.nombre" required placeholder="Nombre" autofocus>
+      <mat-error *ngIf="nombre.invalid">El nombre del empleado es requerida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="7-10" class="col-xs-12" style="width: 100%;">
+      <input matInput #num_identificacion maxlength="10" autocomplete="off" minlength="7" name="num_identificacion" [(ngModel)]="empleados.num_identificacion" required placeholder="Documento">
+      <mat-hint align="end">{{num_identificacion.value?.length || 0}}/10</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 100%;">
+      <input autocomplete="off" matInput type="email" [formControl]="email" name="email" [(ngModel)]="empleados.email" required placeholder="Correo" autofocus>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+
+    <br/><br/>
+
+    <button class="btn1" color="primary" mat-raised-button mat-dialog-close>Cancelar</button>
+    <button class="btn2" [disabled]="!nuevoEmpleadoForm.form.valid || email.invalid" mat-raised-button [mat-dialog-close] color="primary" type="submit">Guardar</button>
+
+   </form>
+</div>
+

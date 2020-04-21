@@ -1,0 +1,115 @@
+<!--IMPORTACIONES-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="/path/to/bootstrap-hover-dropdown.min.js"></script>
+<script src="/path/to/jquery.min.js"></script>
+<script src="/path/to/bootstrap.min.js"></script>
+<script src="/path/to/bootstrap-hover-dropdown.min.js"></script>
+
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="Camilo">
+    <title>Flujo de trabajo</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+</head>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="author" content="Camilo">
+  <title>Flujo de trabajo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<!--CABECERA-->
+
+  <div id="cabecera">
+    <img style="width: 100%;" src="../assets/cabecera.PNG" />
+  </div>
+
+<!--NAVBAR-->
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan success-color-dark" [containerInside]="false">
+
+      <!-- Navbar brand -->
+      <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/home']">
+        <mdb-icon fas icon="home"></mdb-icon>
+        Inicio
+      </a></mdb-navbar-brand>
+
+      <!-- Collapsible content -->
+      <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="users"></mdb-icon> Empleados<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/home']">Gestion de empleados</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/tree-empleado']">Estructura organizacional</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="sort-amount-up-alt"></mdb-icon> Cargos<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/cargo']">Gestion de cargos</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/tree-cargo']">Estructura organizacional</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="users-cog"></mdb-icon> Dependencias<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/dependencia']">Gestion de dependencias</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/tree-dependencia']">Estructura organizacional</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Ajustes</a>
+          </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Mi perfil</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Salir</a>
+            </div>
+          </li>
+
+        </ul>
+        <!-- Links -->
+      </links>
+      <!-- Collapsible content -->
+
+    </mdb-navbar>
+    <!--/.Navbar-->
+
+
+<!--SCRIPT-->
+
+
+
+<!-- ROUTER -->
+<router-outlet></router-outlet>

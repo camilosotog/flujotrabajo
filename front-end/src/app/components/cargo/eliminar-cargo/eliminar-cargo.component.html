@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>No se puede eliminar el cargo!</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>
+    ¡Espera! {{data.name}} aún depende de este cargo.
+    Deberías editar la información de {{data.name}} antes de eliminar este elemento.
+  </h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Entendido</button>
+</mat-dialog-actions>

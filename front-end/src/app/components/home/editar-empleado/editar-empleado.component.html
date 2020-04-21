@@ -1,0 +1,35 @@
+
+<div class="content">
+
+    <h2>Editar empleado</h2>
+    <br/><br/>
+    <form [formGroup]="form" #editarEmpleadoForm="ngForm" (ngSubmit)="editar(form)">
+
+      <mat-dialog-content>
+        <mat-form-field  class="col-xs-12" style="width: 80%;">
+          <input autocomplete="off" matInput formControlName="nombre" placeholder="Nombre">
+        </mat-form-field>
+
+        <mat-form-field  class="col-xs-12" style="width: 80%;">
+          <input autocomplete="off" matInput formControlName="num_identificacion" placeholder="Documento">
+        </mat-form-field>
+
+        <mat-form-field class="col-xs-12" style="width: 80%;">
+          <input autocomplete="off" matInput formControlName="email" placeholder="Correo">
+        </mat-form-field>
+
+      </mat-dialog-content>
+
+      <br/><br/>
+
+      <div class="btns">
+        <button [routerLink]="['/home']" class="btn1" color="primary" type="submit" mat-raised-button mat-dialog-close>Cancelar</button>
+        <button [disabled]="!editarEmpleadoForm.form.valid" mat-raised-button class="btn2" color="primary" type="submit">Actualizar</button>
+      </div>
+
+    </form>
+
+</div>
+
+<!-- EJEMPLo-->
+

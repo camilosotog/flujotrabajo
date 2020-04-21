@@ -1,0 +1,56 @@
+<div class="content">
+  <h2>Editar cargo</h2>
+  <br/><br/>
+  <form [formGroup]="form" #editarCargoForm="ngForm" (ngSubmit)="editar(form)">
+
+    <mat-dialog-content>
+      <mat-form-field  class="col-xs-12" style="width: 97%;">
+        <input autocomplete="off" matInput formControlName="nombre" placeholder="Nombre">
+      </mat-form-field>
+
+      <mat-form-field  class="col-xs-12" style="width: 97%;">
+        <input autocomplete="off" matInput formControlName="codigo" placeholder="Codigo">
+      </mat-form-field>
+
+      <mat-form-field  class="col-xs-12" style="width: 97%;">
+        <input autocomplete="off" matInput formControlName="descripcion" placeholder="Descripcion">
+      </mat-form-field>
+
+      <mat-form-field  class="col-xs-12" style="width: 97%;">
+        <input autocomplete="off" matInput formControlName="extension" placeholder="Extension">
+      </mat-form-field>
+
+      <mat-form-field class="col-xs-12" style="width: 97%;">
+        <mat-label>Dependencia a la que pertenece</mat-label>
+        <mat-select [(value)]="selected"  autocomplete="off" matInput formControlName="fk_dependencia">
+          <mat-option *ngFor="let dependencia of dependencias" [(value)]="dependencia.id" >{{dependencia.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="col-xs-12" style="width: 97%;">
+        <mat-label>Cargo jefe</mat-label>
+        <mat-select [(value)]="selected2"  autocomplete="off" matInput formControlName="fk_cargo">
+          <mat-option *ngFor="let cargo of cargos2" [(value)]="cargo.id" >{{cargo.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="col-xs-12" style="width: 97%;">
+        <mat-label>Empleado que ocupa este cargo</mat-label>
+        <mat-select [(value)]="selected3"  autocomplete="off" matInput formControlName="fk_empleado">
+          <mat-option *ngFor="let empleado of empleados" [(value)]="empleado.id" >{{empleado.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+    </mat-dialog-content>
+
+    <br/><br/>
+
+    <div class="btns">
+      <button [routerLink]="['/cargo']" class="btn1" color="primary" type="submit" mat-raised-button mat-dialog-close>Cancelar</button>
+      <button [disabled]="!editarCargoForm.form.valid" mat-raised-button class="btn2" color="primary" type="submit">Actualizar</button>
+    </div>
+
+  </form>
+</div>

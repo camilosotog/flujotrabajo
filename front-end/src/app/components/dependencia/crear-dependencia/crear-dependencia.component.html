@@ -1,0 +1,47 @@
+<div class="content">
+  <h2>Agregar dependencias</h2>
+  <br/><br/><br/>
+  <form #nuevaDependenciaForm="ngForm" (ngSubmit)="agregar()">
+
+    <mat-form-field  class="col-xs-12" style="width: 100%;">
+      <input autocomplete="off" matInput type="text" #nombre="ngModel" name="nombre" [(ngModel)]="dependencias.nombre" required placeholder="Nombre" autofocus>
+      <mat-error *ngIf="nombre.invalid">El nombre de dependencias es requerida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 100%;">
+      <input autocomplete="off" matInput minlength="5" maxlength="5" #codigo="ngModel" name="codigo" [(ngModel)]="dependencias.codigo" required placeholder="Codigo" autofocus>
+      <mat-error *ngIf="codigo.invalid">El codigo es requerido</mat-error>
+      <mat-hint align="end">{{codigo.value?.length || 0}}/5</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <mat-label>Dependencia a la que pertenece</mat-label>
+      <mat-select [(value)]="selected"  autocomplete="off" matInput #fk_dependencia="ngModel" name="fk_dependencia" [(ngModel)]="dependencias.fk_dependencia">
+        <mat-option *ngFor="let dependencia of dependencias2" [(value)]="dependencia.id" >{{dependencia.nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <mat-label>Jefe de la dependencia</mat-label>
+      <mat-select [(value)]="selected2"  autocomplete="off" matInput #fk_empleado="ngModel" name="fk_empleado" [(ngModel)]="dependencias.fk_empleado">
+        <mat-option *ngFor="let empleado of empleados" [(value)]="empleado.id" >{{empleado.nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field id="inputNotView" class="col-xs-12" style="width: 0%; height: 0;">
+      <input autocomplete="off" matInput type="number" #fk_empleado="ngModel" name="fk_empleado" [(value)]="selected2" [(ngModel)]="dependencias.fk_empleado" required placeholder="Jefe" autofocus>
+      <mat-error *ngIf="fk_empleado.invalid">El jefe de área es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field id="inputNotView" class="col-xs-12" style="width: 0%; height: 0;">
+      <input autocomplete="off" matInput type="number" #email="ngModel" name="fk_dependencia" [(value)]="selected" [(ngModel)]="dependencias.fk_dependencia" required placeholder="Dependencia padre" autofocus>
+      <mat-error *ngIf="email.invalid"> es requerido</mat-error>
+    </mat-form-field>
+
+    <br/><br/>
+
+    <button class="btn1" color="primary" mat-raised-button mat-dialog-close>Cancelar</button>
+    <button class="btn2" [disabled]="!nuevaDependenciaForm.form.valid" mat-raised-button [mat-dialog-close] color="primary" type="submit">Guardar</button>
+
+   </form>
+</div>

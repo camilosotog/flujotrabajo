@@ -1,0 +1,66 @@
+#datos{
+  display: flexbox;
+  width: 79%;
+  float: right;
+}
+.my-custom-scrollbar {
+  position: relative;
+  height: 400px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.mat-form-field {
+  font-size: 14px;
+}
+
+#titulo{
+  float: right;
+  font-size: 22px;
+}
+#btnCrear {
+  background-color: rgb(69, 233, 82);
+  font-size: 30%;
+}
+@media only screen and (max-width: 1000px) {
+  #modulos{
+    display: none;
+  }
+  #nav{
+    height: 100%;
+  }
+  #datos{
+    width: 100%;
+    float: left;
+  }
+}
+#leftBtn{
+  float: left;
+}
+
+
+#modulos{
+  width: 20%;
+  height: 485px;
+  float: left;
+  background-color: rgb(195, 255, 200);
+}
+#nav{
+  height: 490px;
+  width: 100%;
+  place-items: initial;
+  align-items: center;
+}
+#btnMod{
+  width: 95%;
+  color: black;
+}
+#btnMod1{
+  width: 95%;
+}
+.listaBtns{
+  width: 100%;
+  align-items: center;
+}

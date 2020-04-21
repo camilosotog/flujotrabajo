@@ -1,0 +1,75 @@
+<div class="content">
+  <h2>Agregar cargo</h2>
+  <br/>
+  <form #nuevoCargoForm="ngForm" (ngSubmit)="agregar()">
+
+    <mat-form-field  class="col-xs-12" style="width: 97%;">
+      <input autocomplete="off" matInput type="text" #nombre="ngModel" name="nombre" [(ngModel)]="cargos.nombre" required placeholder="Nombre" autofocus>
+      <mat-error *ngIf="nombre.invalid">El nombre del cargo es requerida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <mat-label>Descripción del cargo</mat-label>
+      <mat-select autocomplete="off" matInput #descripcion="ngModel" name="descripcion" [(ngModel)]="cargos.descripcion">
+        <mat-option *ngFor="let des of desc" [value]="des.value">
+          {{des.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <input autocomplete="off" matInput #codigo="ngModel" minlength="5" maxlength="5" name="codigo" [(ngModel)]="cargos.codigo" required placeholder="Codigo" autofocus>
+      <mat-error *ngIf="codigo.invalid">El codigo es requerido</mat-error>
+      <mat-hint align="end">{{codigo.value?.length || 0}}/5</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <input autocomplete="off" matInput minlength="4" maxlength="4" #extension="ngModel" name="extension" [(ngModel)]="cargos.extension" required placeholder="Extension" autofocus>
+      <mat-error *ngIf="extension.invalid">El numero de extension es requerido</mat-error>
+      <mat-hint align="end">{{extension.value?.length || 0}}/4</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <mat-label>Empleado que ocupa el cargo</mat-label>
+      <mat-select [(value)]="selected3"  autocomplete="off" matInput #fk_empleado="ngModel" name="fk_empleado" [(ngModel)]="cargos.fk_empleado">
+        <mat-option *ngFor="let empleado of empleados" [(value)]="empleado.id" >{{empleado.nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <mat-label>Seleccione cargo padre</mat-label>
+      <mat-select [(value)]="selected"  autocomplete="off" matInput #fk_dependencia="ngModel" name="fk_cargo" [(ngModel)]="cargos.fk_cargo">
+        <mat-option *ngFor="let cargo of cargos2" [(value)]="cargo.id" >{{cargo.nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12" style="width: 97%;">
+      <mat-label>Dependencia a la que pertenece</mat-label>
+      <mat-select [(value)]="selected2"  autocomplete="off" matInput #fk_dependencia="ngModel" name="fk_dependencia" [(ngModel)]="cargos.fk_dependencia">
+        <mat-option *ngFor="let dependencia of dependencias" [(value)]="dependencia.id" >{{dependencia.nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field id="inputNotView" class="col-xs-12" style="width: 0%; height: 0;">
+      <input autocomplete="off" matInput type="number" #fk_dependencia="ngModel" name="fk_dependencia" [(value)]="selected2" [(ngModel)]="cargos.fk_dependencia" required placeholder="Dependencia donde pertenece" autofocus>
+      <mat-error *ngIf="fk_dependencia.invalid">La dependencia es requerida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field id="inputNotView" class="col-xs-12" style="width: 0%; height: 0;">
+      <input autocomplete="off" matInput type="text" #fk_cargo="ngModel" name="fk_cargo" [(value)]="selected" [(ngModel)]="cargos.fk_cargo" required placeholder="Cargo padre" autofocus>
+      <mat-error *ngIf="fk_cargo.invalid">El cargo padre es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field id="inputNotView" class="col-xs-12" style="width: 0%; height: 0;">
+      <input autocomplete="off" matInput type="number" #fk_empleado="ngModel" name="fk_empleado" [(value)]="selected3" [(ngModel)]="cargos.fk_empleado" required placeholder="Ocupado por:" autofocus>
+      <mat-error *ngIf="fk_empleado.invalid">El empleado es requerido</mat-error>
+    </mat-form-field>
+
+
+    <br/><br/>
+
+    <button class="btn1" color="primary" mat-raised-button mat-dialog-close>Cancelar</button>
+    <button class="btn2" [disabled]="!nuevoCargoForm.form.valid" mat-raised-button [mat-dialog-close] color="primary" type="submit">Guardar</button>
+
+   </form>
+</div>
